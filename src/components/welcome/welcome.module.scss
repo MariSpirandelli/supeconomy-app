@@ -1,0 +1,42 @@
+@import "/public/assets/css/variables.scss";
+
+.publicHome {
+  background-color: $nav-bg-color !important;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .greetingImg {
+    img {
+      width: 20rem;
+      margin-left: -15px;
+    }
+  }
+
+  h6 {
+    text-align: center;
+    text-shadow: 0px 3px 5px #a2a2a2;
+    color: #439322;
+    font-size: 20px;
+  }
+
+  a {
+    margin-top: 3rem;
+    color: $nav-icons-font-color !important;
+    text-decoration: underline;
+    cursor: pointer;
+
+    svg {
+      margin: 0px 0.3rem;
+    }
+  }
+
+  a:nth-of-type(2){
+    background-color: $nav-icons-font-color;
+    margin: auto 0px;
+    color: $nav-bg-color !important;
+    border-radius: 5px;
+  }
+}
+
