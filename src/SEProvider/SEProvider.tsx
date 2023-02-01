@@ -1,49 +1,31 @@
 import React, {
   createContext,
-  MutableRefObject,
+  ReactNode,
   useContext,
   useMemo,
   useRef,
   useState,
-} from "react";
-import authService from "../services/auth-service";
-import { SEStateType } from "../types/SEStateType";
-import { SEType } from "../types/SEType";
-import useActions from "./useActions";
-
-declare global {
-  interface Window {
-    gfx: any;
-  }
-}
+} from 'react';
+import authService from '../services/auth-service';
+import { SEInternalRefType, SEStateType } from '../types/SEStateType';
+import { SEType } from '../types/SEType';
+import useActions from './useActions';
 
 export const SEContext = createContext<SEType | null>(null);
 
-type Props = {
-  seRef?: MutableRefObject<SEType | undefined>;
-};
-
-export const useSE = (): SEType => {
+function useSE(): SEType {
   const se = useContext(SEContext);
   if (!se) {
-    throw Error("Somewhere you are using se outside of SEProvider");
+    throw Error('Somewhere you are using se outside of SEProvider');
   }
   return se;
-};
-
-export interface SEInternalRefType {
-  state: SEStateType;
 }
 
-const SEProvider: React.FC<Props> = (props) => {
-  const { children, seRef } = props;
+function SEProvider(props: { children: ReactNode }) {
+  const [state, setState] = useState<SEStateType>({
+    isAuthenticated: authService.isValid,
 
-  const [state, setState] = useState<SEStateType>(
-    (): SEStateType => {
-      return {
-        isAuthenticated: authService.isValid,
-
-        /* isLoading: true,
+    /* isLoading: true,
         isAsyncLoading: false,
 
         isSyncing: false,
@@ -53,9 +35,7 @@ const SEProvider: React.FC<Props> = (props) => {
         activeMenu: null,
 
         productId: null, */
-      };
-    }
-  );
+  });
 
   /* const isLoading =
   useEffect(() => {
@@ -63,7 +43,7 @@ const SEProvider: React.FC<Props> = (props) => {
       ...state,
       isLoading,
     }))
-  }, [isLoading]) // In GFXCanvas we update meta.isLoading for each section
+  }, [isLoading])
 
   const buttonsDisabled = isLoading || state.isAsyncLoading
   useEffect(() => {
@@ -96,14 +76,10 @@ const SEProvider: React.FC<Props> = (props) => {
       actions,
     };
 
-    if (seRef) {
-      seRef.current = se;
-    }
-
     return se;
-  }, [state, setState, seRef, actions]);
+  }, [state, setState, actions]);
 
-  return <SEContext.Provider value={se}>{children}</SEContext.Provider>;
-};
+  return <SEContext.Provider value={se}>{props.children}</SEContext.Provider>;
+}
 
-export default SEProvider;
+export { SEProvider, useSE };

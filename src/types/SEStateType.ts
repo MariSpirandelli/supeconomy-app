@@ -6,6 +6,10 @@
   dismissableButtonLabel?: string | undefined;
 }; */
 
+export interface SEInternalRefType {
+  state: SEStateType;
+}
+
 export type SEStateType = {
   isAuthenticated: boolean
 

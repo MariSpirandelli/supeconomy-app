@@ -1,13 +1,11 @@
-import { AppProps } from 'next/dist/next-server/lib/router/router'
-import React, { FC } from 'react'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import SEProvider from '../SEProvider/SEProvider'
-import Header from '../components/layout/menu-top'
-import './app.scss'
+import type { AppProps } from 'next/app';
+import React from 'react';
+import { createTheme, ThemeProvider } from '@mui/material';
+import Header from '../components/layout/menu-top';
+import './app.scss';
+import { SEProvider } from '@/SEProvider/SEProvider';
 
-const Noop: FC = ({ children }) => <>{children}</>
-
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       light: '#76c452',
@@ -25,17 +23,14 @@ const theme = createMuiTheme({
 });
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const Layout = (Component as any).Layout || Noop
   return (
-    <SEProvider>
+    <SEProvider {...pageProps}>
       <ThemeProvider theme={theme}>
-      <Layout pageProps={pageProps}>
         <Header {...pageProps} />
-        <div className='content-bg'>
+        <div className="content-bg">
           <Component {...pageProps} />
         </div>
-      </Layout>
       </ThemeProvider>
     </SEProvider>
-  )
+  );
 }

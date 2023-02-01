@@ -1,10 +1,9 @@
 import produce from 'immer'
 import { Dispatch, MutableRefObject, SetStateAction, useCallback } from 'react'
 
-import { SEStateType } from '../types/SEStateType'
+import { SEInternalRefType, SEStateType } from '../types/SEStateType'
 
 import authService from '../services/auth-service'
-import { SEInternalRefType } from './SEProvider'
 
 declare global {
   interface Window {
@@ -27,17 +26,17 @@ export default function useActions(props: Props) {
   const { internalRef, setState } = props
 
   const logout = useCallback(() => {
-    authService.logout()
+    authService.logout();
 
     setState((prevState) => {
       return produce(prevState, (d: { isAuthenticated: boolean }) => {
         d.isAuthenticated = false
       })
     })
-  }, [setState, internalRef])
+  }, [setState])
 
   const login = useCallback(
-    (token) => {
+    (token: any) => {
       authService.storeToken(token)
 
       setState((prevState) => {
@@ -46,7 +45,7 @@ export default function useActions(props: Props) {
         })
       })
     },
-    [setState, internalRef]
+    [setState]
   )
 
   return {
