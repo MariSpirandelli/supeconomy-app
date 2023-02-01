@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Products from "../components/products";
 import Welcome from "../components/welcome";
 import { useSE } from "../SEProvider";
@@ -6,7 +6,11 @@ import { useSE } from "../SEProvider";
 export default function Home() {
   const se = useSE()
 
-  const isAuthenticated = se.state.isAuthenticated;
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+
+  useEffect(()=>{
+    setIsAuthenticated(se.state.isAuthenticated)
+  }, [se.state.isAuthenticated]);
 
   return (
     <>
