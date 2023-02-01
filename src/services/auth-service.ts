@@ -53,5 +53,5 @@ export class AuthService {
     await redirectToLogin()
   }
 }
-
-export default new AuthService()
+const authService = new AuthService();
+export default authService;
