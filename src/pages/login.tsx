@@ -5,7 +5,7 @@ import { useSE } from '../SEProvider'
 
 
 function Login() {
-  const se = useSE()
+  const se = useSE();
   const router = useRouter()
   const authenticated = se.state.isAuthenticated
 

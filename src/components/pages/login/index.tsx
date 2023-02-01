@@ -1,12 +1,12 @@
 import React from 'react'
-import Button from '@material-ui/core/Button'
+
 import styles from './login.module.scss'
 import { useSE } from '../../../SEProvider/SEProvider'
-import { Input, InputAdornment, InputLabel, TextField } from '@material-ui/core'
-import IconButton from '@material-ui/core/IconButton'
-import Visibility from '@material-ui/icons/Visibility'
-import VisibilityOff from '@material-ui/icons/VisibilityOff'
-import { AccountCircle } from '@material-ui/icons'
+import { Button, IconButton, Input, InputAdornment, InputLabel, TextField } from '@mui/material'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import Image from 'next/image'
 
 export type LoginInputs = {
   cpf: string
@@ -20,7 +20,7 @@ interface State {
 }
 
 export default function LoginForm() {
-  const se = useSE()
+  const se = useSE();
 
   const [values, setValues] = React.useState<State>({
     cpf: '',
@@ -55,7 +55,9 @@ export default function LoginForm() {
     <div className={styles.loginbg}>
       <h3 className={styles.welcomeText}>Bem vindo!</h3>
       <div className={styles.loginLogo}>
-        <img src='/supeconomy.png' />
+        <Image width={100}
+        height={100}
+         alt='app logo' src='/supeconomy.png' />
       </div>
       <form className={styles.loginForm} onSubmit={handleSubmit}>
         <TextField
@@ -65,7 +67,7 @@ export default function LoginForm() {
           InputProps={{
             startAdornment: (
               <InputAdornment position='start'>
-                <AccountCircle />
+                <AccountCircleIcon />
               </InputAdornment>
             ),
           }}
@@ -78,7 +80,7 @@ export default function LoginForm() {
           onChange={handleChange('password')}
           startAdornment={
             <InputAdornment position='start'>
-              <AccountCircle />
+              <AccountCircleIcon />
             </InputAdornment>
           }
           endAdornment={
@@ -88,7 +90,7 @@ export default function LoginForm() {
                 onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}
               >
-                {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                {values.showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
               </IconButton>
             </InputAdornment>
           }
