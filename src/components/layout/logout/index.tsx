@@ -8,7 +8,7 @@ const Logout = () => {
   const se = useSE();
 
   return (
-    <StyledNavItem className="navbar-nav navbar-nav-right">
+    <StyledNavItem className="navbar-nav">
       <li className="nav-item">
         <a
           onClick={() => se.actions.logout()}
