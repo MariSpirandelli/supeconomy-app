@@ -1,7 +1,7 @@
-@import "~bootstrap/scss/bootstrap.scss";
-@import './public/assets/css/variables.scss';
+import { createGlobalStyle } from 'styled-components';
 
-h1,
+export const GlobalStyle = createGlobalStyle`
+    h1,
 h2,
 h3,
 h4,
@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  background-color: $content-bg-color !important;
+  background-color: var(--content-bg-color) !important;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -48,13 +48,18 @@ body {
 
 
 nav.navbar.navbar-expand-lg.navbar-light {
-  color: $nav-icons-font-color;
+  color: var(--nav-icons-font-color);
   padding: 0rem 1rem;
   position: relative;
   box-shadow: 0px 5px 5px #c3c3c3;
-  background-color: $nav-bg-color;
+  background-color: var(--nav-bg-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  place-content: space-between;
+
   a.nav-link{
-    color: $nav-icons-font-color !important;
+    color: var(--nav-icons-font-color) !important;
   }
   .navbar-brand img.d-inline-block.align-top{
     max-width: 6rem;
@@ -62,13 +67,13 @@ nav.navbar.navbar-expand-lg.navbar-light {
 }
 
 .nav {
-    background-color: $content-bg-color;
+    background-color: var(--content-bg-color);
     padding: 1rem 0px 0.5rem 0;
 
   .nav-item{
     a.nav-link{
       font-size: 1.6rem;
-      color: $nav-icons-font-color;
+      color: var(--nav-icons-font-color);
       &.active{
         border-bottom: 1px solid;
       }
@@ -79,3 +84,4 @@ nav.navbar.navbar-expand-lg.navbar-light {
 nav.navbar.sticky-top.navbar-expand-lg.navbar-light.public-view{
   box-shadow: none;
 }
+`;
