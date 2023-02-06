@@ -1,29 +1,21 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useRouter } from 'next/router'
+import React from 'react';
+import ProductCard from '../cards';
+import { StyledDiv } from './_styles';
+import { products } from '@/mocked/data/products';
+import { group } from '@/mocked/data/groups';
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
-
-export default function Products() {
-  const router = useRouter()
-  let [name, setName] = React.useState('Mari')
+const Products: React.FC = () => {
   return (
-    <>
-      <Title>Products {name}</Title>
-      <input
-        placeholder='Seu nome'
-        onChange={(event) => setName(event.target.value)}
-      />
-      <button
-        onClick={() => {
-          router.push(`/products?name=${name}`)
-        }}
-      >
-        click me
-      </button>
-    </>
-  )
-}
+    <StyledDiv id="product_list">
+      {products.map((product, i) => (
+        <ProductCard
+          key={`Product_${i}`}
+          product={product}
+          group={group}
+        ></ProductCard>
+      ))}
+    </StyledDiv>
+  );
+};
+
+export default Products;
