@@ -1,9 +1,9 @@
 import produce from 'immer'
 import { Dispatch, MutableRefObject, SetStateAction, useCallback } from 'react'
 
-import { SEInternalRefType, SEStateType } from '../types/SEStateType'
+import { SEInternalRefType, SEStateType } from '../../types/SEStateType'
 
-import authService from '../services/auth-service'
+import authService from '../../services/auth-service'
 
 declare global {
   interface Window {

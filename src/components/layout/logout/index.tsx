@@ -1,7 +1,7 @@
 import React from 'react';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useSE } from '../../../SEProvider';
+import { useSE } from '../../../context/SEProvider';
 import { StyledNavItem } from './_style';
 
 const Logout = () => {

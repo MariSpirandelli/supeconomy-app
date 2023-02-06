@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Products from "../components/products";
 import Welcome from "../components/welcome";
-import { useSE } from "../SEProvider";
+import { useSE } from "../context/SEProvider";
 
 export default function Home() {
   const se = useSE()

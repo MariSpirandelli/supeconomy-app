@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import LoginForm from '../components/pages/login'
-import { useSE } from '../SEProvider'
+import { useSE } from '../context/SEProvider'
 
 
 function Login() {

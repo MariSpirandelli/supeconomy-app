@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useSE } from '../../../SEProvider/SEProvider';
+import { useSE } from '../../../context/SEProvider/SEProvider';
 import {
   Button,
   IconButton,

@@ -6,9 +6,9 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import authService from '../services/auth-service';
-import { SEInternalRefType, SEStateType } from '../types/SEStateType';
-import { SEType } from '../types/SEType';
+import authService from '../../services/auth-service';
+import { SEInternalRefType, SEStateType } from '../../types/SEStateType';
+import { SEType } from '../../types/SEType';
 import useActions from './useActions';
 
 export const SEContext = createContext<SEType | null>(null);

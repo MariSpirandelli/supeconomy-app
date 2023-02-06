@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { useSE } from '../../../SEProvider';
+import { useSE } from '../../../context/SEProvider';
 import Logo from '../logo/index';
 import Logout from '../logout';
 

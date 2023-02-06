@@ -4,7 +4,7 @@ import { ThemeProvider } from '@mui/material';
 import Header from '../components/layout/menu-top';
 import '../styles/colors.css';
 import { theme } from '../styles/materialUI';
-import { SEProvider } from '@/SEProvider/SEProvider';
+import { SEProvider } from '@/context/SEProvider/SEProvider';
 import { GlobalStyle } from '@/styles/global';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
