@@ -1,13 +1,15 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Logo = () => (
-  <a href='/' className='navbar-brand font-bold text-white text-2xl '>
-    <img
+  <Link href='/' className='navbar-brand font-bold text-white text-2xl '>
+    <Image
       src='/supeconomy.png'
       alt='Supeconomy-Home'
       className='d-inline-block align-top'
-    ></img>
-  </a>
+    ></Image>
+  </Link>
 );
 
 export default Logo;

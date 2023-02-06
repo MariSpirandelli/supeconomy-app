@@ -9,7 +9,7 @@ export type AuthProps = {
 }
 
 export function privateRoute(WrappedComponent: any) {
-  return class extends Component<AuthProps> {
+  return class PrivateRoute extends Component<AuthProps> {
     
 
     static async getInitialProps(ctx: NextPageContext) {

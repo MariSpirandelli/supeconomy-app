@@ -46,7 +46,7 @@ export default function useActions(props: Props) {
       })
     },
     [setState]
-  )
+  );
 
   return {
     logout,
