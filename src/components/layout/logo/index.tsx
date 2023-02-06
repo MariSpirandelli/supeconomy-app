@@ -8,6 +8,7 @@ const Logo = () => (
       src='/supeconomy.png'
       alt='Supeconomy-Home'
       className='d-inline-block align-top'
+      width={100} height={80}
     ></Image>
   </Link>
 );
