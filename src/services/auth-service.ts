@@ -45,7 +45,6 @@ export class AuthService {
     localStorage.setItem(TOKEN_STORAGE_KEY, token)
     this.token = token
     this.decodedToken = jwtDecode(token)
-    await Router.push('/products?name=Logged')
   }
 
   async logout() {
