@@ -28,6 +28,9 @@ export const StyledDiv = styled.div`
       color: var(--nav-icons-font-color) !important;
       text-decoration: underline;
       cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       svg {
         margin: 0px 0.3rem;

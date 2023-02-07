@@ -1,9 +1,10 @@
 import React from 'react';
-import { faSignInAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import Image from 'next/image';
 import { StyledDiv } from './_styles';
+import Login from '@mui/icons-material/Login';
+import PersonAdd from '@mui/icons-material/PersonAdd';
+import { Typography } from '@mui/material';
 
 export default function Welcome() {
   return (
@@ -22,11 +23,14 @@ export default function Welcome() {
         </h6>
 
         <Link href="/login" className="nav-link cursor-pointer" id="signin">
-          <FontAwesomeIcon icon={faSignInAlt} /> Faça já seu login!
+          <Login />
+          <Typography variant="body2" component="span">
+            Faça já seu login!
+          </Typography>
         </Link>
 
         <Link href="/signup" className="nav-link cursor-pointer" id="signup">
-          <FontAwesomeIcon icon={faUserPlus} />
+          <PersonAdd />
           Cadastre-se!
         </Link>
       </StyledDiv>
