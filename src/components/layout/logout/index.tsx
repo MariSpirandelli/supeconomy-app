@@ -1,8 +1,7 @@
 import React from 'react';
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSE } from '../../../context/SEProvider';
 import { StyledNavItem } from './_style';
+import * as Signout from '@mui/icons-material/Logout';
 
 const Logout = () => {
   const se = useSE();
@@ -15,7 +14,7 @@ const Logout = () => {
           className="nav-link"
           id="signOut"
         >
-          <FontAwesomeIcon icon={faSignOutAlt} /> Sair
+        <Signout.default/>
         </a>
       </li>
     </StyledNavItem>
