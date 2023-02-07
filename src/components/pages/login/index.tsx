@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useSE } from '../../../context/SEProvider/SEProvider';
 import {
@@ -14,6 +14,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import Image from 'next/image';
 import { StyledDiv } from './_styles';
+import Loading from '@/components/Loading';
 
 export type LoginInputs = {
   cpf: string;
@@ -29,11 +30,17 @@ interface State {
 export default function LoginForm() {
   const se = useSE();
 
-  const [values, setValues] = React.useState<State>({
+  const [values, setValues] = useState<State>({
     cpf: '',
     password: '',
     showPassword: false,
   });
+
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   const handleChange =
     (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,6 +59,7 @@ export default function LoginForm() {
 
   const handleSubmit = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
+    setIsLoading(true);
     se.actions.login(
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcGYiOiIwMTYuMDM0LjIyNi0wOSIsImNyZWF0ZWRBdCI6IjIwMjAtMDEtMDVUMjM6NDM6MjUuNDkyWiIsInBvaW50IjpudWxsLCJob21lQWRkcmVzcyI6bnVsbCwid29ya0FkZHJlc3MiOm51bGwsIm5hbWUiOiJNYXJpYW5uYSIsImlhdCI6MTYwMDYyMzMzOCwiZXhwIjoxNjAyMzEwMzYxMzcyfQ.zrfTW-6jCZre_jt832xp6cz7CegNRn2drTGqtsIZCVU'
     );
