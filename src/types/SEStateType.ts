@@ -11,10 +11,10 @@ export interface SEInternalRefType {
 }
 
 export type SEStateType = {
-  isAuthenticated: boolean
+  isAuthenticated: boolean;
 
-  /* isLoading: boolean;
-  isAsyncLoading: boolean;
+  isLoading: boolean;
+  /*isAsyncLoading: boolean;
   isSyncing: boolean;
 
   alert?: AlertOptions | null;
@@ -32,4 +32,4 @@ export type SEStateType = {
   isSupportedBrowser: boolean;
 
   productId: number | string | null; */
-}
+};

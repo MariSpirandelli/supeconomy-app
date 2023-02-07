@@ -2,6 +2,7 @@ import React, {
   createContext,
   ReactNode,
   useContext,
+  useEffect,
   useMemo,
   useRef,
   useState,
@@ -25,8 +26,8 @@ function SEProvider(props: { children: ReactNode }) {
   const [state, setState] = useState<SEStateType>({
     isAuthenticated: authService.isValid,
 
-    /* isLoading: true,
-        isAsyncLoading: false,
+    isLoading: true,
+    /* isAsyncLoading: false,
 
         isSyncing: false,
 
@@ -37,21 +38,21 @@ function SEProvider(props: { children: ReactNode }) {
         productId: null, */
   });
 
-  /* const isLoading =
+  const isLoading = state.isLoading;
   useEffect(() => {
     setState((state) => ({
       ...state,
       isLoading,
-    }))
-  }, [isLoading])
+    }));
+  }, [isLoading]);
 
-  const buttonsDisabled = isLoading || state.isAsyncLoading
+  const buttonsDisabled = state.isLoading;
   useEffect(() => {
     setState((state) => ({
       ...state,
       buttonsDisabled,
-    }))
-  }, [buttonsDisabled]) */
+    }));
+  }, [buttonsDisabled]);
 
   const internalRef = useRef<SEInternalRefType>({
     state,
