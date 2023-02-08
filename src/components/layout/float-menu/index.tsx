@@ -12,7 +12,7 @@ type MenuActions = {
 const menuActions: MenuActions = {
   search: '/search',
   register: '/register',
-  home: '/home',
+  home: '/',
 };
 
 const FloatMenu: React.FC = () => {
