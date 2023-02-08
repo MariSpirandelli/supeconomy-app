@@ -1,28 +1,41 @@
-# TypeScript & Styled Components Next.js example
+# Supe-conomy APP [<img src=https://img.shields.io/website-up-down-green-red/http/monip.org.svg>](https://supeconomy-app.vercel.app/)
 
-This is a really simple project that show the usage of Next.js with TypeScript and Styled Components.
+It's an app where people can find best prices of products and stores nearby as well as register their purchases to update prices and keep track of their expenses as well as creating a social network for looking for best deals.
 
-## Deploy your own
+To walk through, just pretend you're logging in. It's all mocked for now.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+- **It was created for Brazilian environment**
+- **This version is a mocked version for UX UI proposal**
+- **API can be found in another repository (private yet)**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-styled-components&project-name=with-typescript-styled-components&repository-name=with-typescript-styled-components)
+## First look:
 
-## How to use it?
+Designed by me (**I'm not a designer**)
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+[Figma file](https://www.figma.com/file/ImETBPqIKkRIbtrqHlZVal/Supe-conomy?node-id=0%3A1&t=lcXUTiOWW7jdVlOi-1)
 
-```bash
-npx create-next-app --example with-typescript-styled-components with-typescript-styled-components-app
-# or
-yarn create next-app --example with-typescript-styled-components with-typescript-styled-components-app
-```
+<img width="1048" alt="image" src="https://user-images.githubusercontent.com/8183000/217628934-5bcb8e16-baa8-4c34-941c-b6b1e3a587ad.png">
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## First impressions
 
-## Notes
+A prototype was ran (old version - **this version is all mocked for development proposes**) and the following results were obtained:
 
-This is an amalgamation of the 2 existing examples:
+Whithin 1 month and 15 active users 2 states complaned:
 
-- [with-typescript](https://github.com/vercel/next.js/tree/canary/examples/with-typescript)
-- [with-styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components)
+- 14 registered cities
+- 100 Supermarkets and small stores
+- 1503 distinct products
+
+
+## How to run
+
+- Requirements:
+  - node: `v18.12.0`
+  - yarn
+- Commands:
+  - `yarn install`
+  - `yarn dev`
+
+## Running Tests
+
+In process
