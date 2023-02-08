@@ -43,9 +43,12 @@ const Body: React.FC<Props> = ({
       className={bodyClassNames}
       disableGutters
       maxWidth={false}
-      style={noScroll ? { overflow: 'unset' } : {}}
+      style={style}
     >
-      <StyledContainer maxWidth="lg" style={style}>
+      <StyledContainer
+        maxWidth="lg"
+        style={noScroll ? { overflow: 'unset' } : { overflow: 'visible' }}
+      >
         {children}
       </StyledContainer>
     </StyledContainer>
