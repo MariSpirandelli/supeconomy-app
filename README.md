@@ -1,4 +1,4 @@
-# Supe-conomy APP [<img src=https://img.shields.io/website-up-down-green-red/http/monip.org.svg>](https://supeconomy-app.vercel.app/)
+# Supe-conomy APP [<img src=https://badgen.net/badge/supe-conomy/up/green>](https://supeconomy-app.vercel.app/)
 
 It's an app where people can find best prices of products and stores nearby as well as register their purchases to update prices and keep track of their expenses as well as creating a social network for looking for best deals.
 
